@@ -1,17 +1,14 @@
 $(document).ready(function () {
-    $("#start").click(function () {
+    $("#start").on("click", start);
 
-        //remove youlose and youwin class to reverse to the boundar's color to normal
-        //set touch to false
-
+    function start() {
         $(".boundary").removeClass("youlose");
         $(".boundary").removeClass("youwin");
         $("#status").text("Game started");
 
-
-        let touch = false;
         //lost
 
+        let touch = false;
         $(".boundary").mouseover(function () {
             touch = true;
             $(".boundary").addClass("youlose");
@@ -27,8 +24,7 @@ $(document).ready(function () {
                 $("#status").text("You won :)");
 
             }
-
         });
-    });
+    }
 
 });
